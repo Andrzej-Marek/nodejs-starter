@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    pg_db:
+        image: "postgres:11.6"
+        container_name: words-learning-db
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: "${POSTGRES_USER:-admin}"
+            POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-admin}"
+            PGDATA: /data/postgres/words-learning-db
+        volumes:
+            - "words-learning-db:/data/postgres/data"
+
+volumes:
+    words-learning-db:

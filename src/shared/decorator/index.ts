@@ -1,0 +1,1 @@
+export { Injectable } from "./injectable.decorator";

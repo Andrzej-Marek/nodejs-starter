@@ -1,0 +1,26 @@
+{
+    "moduleFileExtensions": ["ts", "js", "json"],
+    "moduleNameMapper": {
+        "@/(.*)$": "<rootDir>/src/$1"
+    },
+    "testRegex": "(/spec/.*|\\.(test))\\.(ts)$",
+    "roots": ["<rootDir>/"],
+    "transform": {
+        "^.+\\.(ts)$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "coverageThreshold": {
+        "global": {
+            "branches": 50,
+            "functions": 50,
+            "lines": 50,
+            "statements": 50
+        }
+    },
+    "forceExit": true,
+    "maxWorkers": 1,
+    "collectCoverageFrom": ["<rootDir>/**/*.ts", "!<rootDir>/src/config/**/*.ts"],
+    "setupFiles": ["dotenv/config"],
+    "modulePathIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/migrations/", "<rootDir>/src/shared"],
+    "testEnvironment": "node"
+}
